@@ -56,7 +56,19 @@ class App extends React.Component {
 
   search = (term) => {
     Spotify.search(term).then(searchResults => {
-      this.setState({searchResults: searchResults});
+      // console.log(searchResults)
+      // console.log(searchResults[0].id)
+      // console.log(this.state.playlistTracks)
+      //if statement to only display songs that are not currently present in the playlist in the search results
+      let filteredSearchResults = [];
+      for (let i = 0; i<searchResults.length; i++) {
+        if(this.state.playlistTracks.find(savedTrack => savedTrack.id === searchResults[i].id)) {
+          continue;
+        }
+          filteredSearchResults.push(searchResults[i]) 
+      }
+      // console.log(filteredSearchResults)
+      this.setState({searchResults: filteredSearchResults});
     });
   }
 
