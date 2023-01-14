@@ -1,3 +1,7 @@
+Live: https://jamming-spotify-client.netlify.app/
+App require client ID: jamming/src/util/Spotify.js 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
